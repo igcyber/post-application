@@ -14,7 +14,6 @@ class UserObserver
      */
     public function created(User $user)
     {
-        // //test
-        // dd('Form UserObserver', $user);
+        return redirect()->back()->with('message', 'User Has Been Created');
     }
 }

@@ -3,6 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <div class="col-md-12">
+            @if(Session::has('message'))
+                <div class="alert alert-success">
+                    {{Session::get('message')}}
+                </div>
+            @endif
+        </div>
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header">Menu</div>
@@ -10,10 +17,13 @@
                 <div class="card-body">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Post') }}</a>
+                            <a class="nav-link" href="{{ route('post') }}">{{ __('Post') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Comment') }}</a>
+                            <a class="nav-link" href="{{ route('comment') }}">{{ __('Comment') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('user') }}">{{ __('User') }}</a>
                         </li>
                     </ul>
                 </div>

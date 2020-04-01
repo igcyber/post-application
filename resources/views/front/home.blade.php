@@ -7,19 +7,23 @@
         <thead class="thead-light">
             <tr>
                 <th scope="col">Judul</th>
-                <th scope="col">Slug</th>
+                <th scope="col">Content</th>
                 <th scope="col">Aksi</th>
             </tr>
         </thead>
+        @foreach($posts as $post)
         <tbody>
             <tr>
-                <td scope="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, pariatur!</td>
-                <td scope="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, hic!</td>
+                <td scope="col">{{$post->title}}</td>
+                <td scope="col">{{$post->content}}</td>
                 <td scope="col">
-                    <a href="#" class="btn btn-info btn-sm">Lihat</a>
+                    <a href="{{ route('post.show', [$post->id, $post->slug]) }}">
+                        <button class="btn btn-info btn-sm">Info</button>
+                    </a>
                 </td>
             </tr>
         </tbody>
+        @endforeach
     </table>
     </div>
 </div>

@@ -17,8 +17,8 @@ class CreateCommentsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('post_id');
             $table->string('name');
-            $table->string('email');
-            $table->string('website');
+            $table->string('email')->nullable;
+            $table->string('website')->nullable;
             $table->string('comment');
             $table->timestamps();
         });
